@@ -1,8 +1,9 @@
 .container
   %h2 All Boards
   - @boards.each do |board|
-    .boards
-      .boards_title
-        = board.title
-      .boards_content
-        = board.content
+    = link_to board_path(board) do
+      .boards
+        .boards_title
+          = board.title
+        .boards_content
+          = board.content

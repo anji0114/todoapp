@@ -8,3 +8,4 @@
 
 Board.create({title: '記事', content: 'tasktasktasktasktasktasktasktask'})
 Board.create({title: 'naammee', content: 'aaaaaaaaaaaaaaaaaaaaaaa'})
+Board.create({title: 'tasktasktaskask', content: 'descriptiondescriptiondescriptiondescr'})
