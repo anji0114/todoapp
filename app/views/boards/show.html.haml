@@ -1,8 +1,14 @@
 .container
-  .board
+  .boards
     %h1.board_title= @board.title
-    .article_detail
-      %p text
-      %p text
-    .article_content
+    .boards_detail
+      %div
+        %p text
+        %p text
+      .boards_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_board_path
+    .boards_content
       = @board.content
