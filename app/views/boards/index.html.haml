@@ -8,7 +8,7 @@
         .boards_content
           = board.content
         .boards_detail
-          %div
-            %p= board.display_created_at
+          %p= board.user.display_name
+          %p= board.display_created_at
   = link_to new_board_path do
     %p.add_board_btn + Add new board

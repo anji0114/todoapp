@@ -24,6 +24,10 @@ $avatar-size: 32px;
     font-size: 12px;
     position: relative;
     
+    p {
+      margin-left: 16px
+    }
+
     img {
       cursor: pointer;
       width: $avatar-size;
