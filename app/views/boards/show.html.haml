@@ -1,8 +1,16 @@
 .container
-  .board
+  .boards
     %h1.board_title= @board.title
-    .article_detail
-      %p text
-      %p text
-    .article_content
+    .boards_detail
+      %div
+        %p= @board.display_created_at
+        %p text
+        %p text
+      .boards_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_board_path(@board)
+            = link_to '削除する', board_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
+    .boards_content
       = @board.content
