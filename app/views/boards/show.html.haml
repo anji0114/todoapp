@@ -2,10 +2,8 @@
   .boards
     %h1.board_title= @board.title
     .boards_detail
-      %div
-        %p= @board.user.display_name
-        %p= @board.display_created_at
-        %p text
+      %p= @board.user.display_name
+      %p= @board.display_created_at
       - if user_signed_in? && current_user.has_written?(@board)
         .boards_detail_actions
           .dropdown
@@ -15,3 +13,4 @@
               = link_to '削除する', board_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
     .boards_content
       = @board.content
+  %p.add_board_btn + Add new card
