@@ -11,4 +11,8 @@
       %h2= f.label :content, 'description'
     %div
       = f.text_area :content, class: 'text'
+    %div
+      %h2= f.label :daily, 'daily'
+    %div
+      = f.text_field :daily, class: 'text'
     = f.submit '保存', class: 'btn-primary'
