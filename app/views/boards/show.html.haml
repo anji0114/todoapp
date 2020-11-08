@@ -13,4 +13,6 @@
               = link_to '削除する', board_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
     .boards_content
       = @board.content
-  %p.add_board_btn + Add new card
+  
+  = link_to new_board_task_path(@board) do
+    %p.add_board_btn + Add new card
