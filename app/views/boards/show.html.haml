@@ -14,10 +14,11 @@
     .boards_content
       = @board.content
   %h2 タスク一覧
-  - @tasks.each do |task|
-    .boards
-      %p= task.title
-      %p= task.content
-      %p= task.daily
+  = link_to board_task_path(@task) do
+    - @tasks.each do |task|
+      .boards
+        %p= task.title
+        %p= task.content
+        %p= task.deadline
   = link_to new_board_task_path(@board) do
     %p.add_board_btn + Add new card
