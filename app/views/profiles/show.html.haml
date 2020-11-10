@@ -1,0 +1,23 @@
+.container.profilePage
+  .profilePage_user
+    .profilePage_user_image
+      = image_tag 'default-avatar.png'
+    .profilePage_user_basicInfo
+      .profilePage_user_name
+        .profilePage_user_displayName
+          = current_user.display_name
+        .profilePage_user_actionButton
+          = link_to 'Edit', edit_profile_path
+      .profilePage_user_introduction
+        -# = current_user.profile&.introduction
+        aaaaaaaa
+  - current_user.boards.each do |board|
+    = link_to board_path(board) do
+      .boards
+        .boards_title
+          = board.title
+        .boards_content
+          = board.content
+        .boards_detail
+          %p= board.user.display_name
+          %p= board.display_created_at
