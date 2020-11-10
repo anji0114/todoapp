@@ -1,3 +1,5 @@
 %h1.board_title= @task.title
 %h1.board_title= @task.content
 %h1.board_title= @task.deadline
+= link_to '編集する', edit_board_task_path(@task)
+= link_to '削除する', board_task_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
