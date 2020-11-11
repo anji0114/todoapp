@@ -1,5 +1,7 @@
 %h1.board_title= @task.title
 %h1.board_title= @task.content
 %h1.board_title= @task.deadline
+-if @task.eyecatch&.attached?
+  = image_tag @task.eyecatch
 = link_to '編集する', edit_board_task_path(@task)
-= link_to '削除する', board_task_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
+= link_to '削除する', board_task_path(@task.board_id), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
