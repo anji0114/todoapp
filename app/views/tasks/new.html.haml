@@ -4,6 +4,10 @@
       %li= message
   = form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f|
     %div
+      %h2= f.label :eyecatch
+    %div
+      = f.file_field :eyecatch
+    %div
       %h2= f.label :title, 'Name'
     %div
       = f.text_field :title, class: 'text'
