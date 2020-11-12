@@ -6,6 +6,7 @@
 @import 'board';
 @import 'flash';
 @import 'profile';
+@import 'card';
 
 html {
   word-spacing: 1px;
@@ -37,7 +38,7 @@ a {
 }
 
 .container {
-  padding: 16px 16px;
+  padding: 0px 16px;
   width: 100%;
 }
 
