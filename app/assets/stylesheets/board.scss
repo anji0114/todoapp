@@ -42,6 +42,14 @@ $heart-size: 16px;
     .user_info {
       display: flex;
     }
+  }
+  &_task {
+    &_title{
+      padding: 16px 0;
+    }
 
+    .time {
+      padding-bottom: 16px;
+    }
   }
 }
