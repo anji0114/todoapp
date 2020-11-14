@@ -1,6 +1,5 @@
 @import './variables';
 $heart-size: 16px;
-$avatar-size: 32px;
 
 .boards {
   background-color: #EBEBEB;
@@ -11,7 +10,7 @@ $avatar-size: 32px;
 
   &_title {
     font-size: 22px;
-    padding-top: 32px ;
+    padding-top: 22px ;
   }
 
   &_content {
@@ -20,7 +19,6 @@ $avatar-size: 32px;
   }
 
   &_detail {
-    padding: 20px 0;
     display: flex;
     font-size: 12px;
     position: relative;
@@ -45,5 +43,13 @@ $avatar-size: 32px;
       display: flex;
     }
   }
+  &_task {
+    &_title{
+      padding: 16px 0;
+    }
 
+    .time {
+      padding-bottom: 16px;
+    }
+  }
 }
