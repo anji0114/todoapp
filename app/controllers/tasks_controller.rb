@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def show
     @task = Task.find(params[:id])
     @comments = @task.comments

@@ -1,14 +1,1 @@
-.container
-  %ul
-    - @board.errors.full_messages.each do |message|
-      %li= message
-  = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
-    %div
-      %h2= f.label :title, 'Name'
-    %div
-      = f.text_field :title, class: 'text'
-    %div
-      %h2= f.label :content, 'description'
-    %div
-      = f.text_area :content, class: 'text'
-    = f.submit '保存', class: 'btn-primary'
+= render 'form', board: @board
