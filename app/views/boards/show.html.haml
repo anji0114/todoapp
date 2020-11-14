@@ -1,22 +1,6 @@
 .container
-  .board_title= @board.title
-  .board_content
-    %p= @board.content
-  .boards
-    - @tasks.each do |task|
-      = link_to board_task_path(board_id: task.board_id, id: task.id) do
-        .board_task
-          %h3= task.title
-          %p= task.content
-          %p.time= task.deadline
-          -# = image_tag @board.user.avatar_image
-  = link_to new_board_task_path(@board) do
-    %p.add_board_btn + Add new card
+  .boards_title= @board.title
   .boards_detail
-    = image_tag @board.user.avatar_image
-    %div
-      %p= @board.user.display_name
-      %p= @board.display_created_at
     - if user_signed_in? && current_user.has_written?(@board)
       .boards_detail_actions
         .dropdown
@@ -24,3 +8,22 @@
           .dropdown-content.mini
             = link_to '編集する', edit_board_path(@board)
             = link_to '削除する', board_path(@board), data: {method: 'delete', confirm: '本当に削除してもいいですか'}
+  .boards_content
+    %p= @board.content
+  - @tasks.each do |task|
+    .boards
+      = link_to board_task_path(board_id: task.board_id, id: task.id) do
+        .boards_task
+          %p.boards_task_title= task.title
+          -if task.eyecatch&.attached?
+            .task_image
+              = image_tag task.eyecatch
+          %p.boards_content= task.content
+          %p.time= "deadline  #{task.deadline}"
+          .boards_detail
+            = image_tag task.user.avatar_image
+            %div
+              %p= task.user.display_name
+              %p= task.task_created_at
+  = link_to new_board_task_path(@board) do
+    %p.add_board_btn + Add new card
